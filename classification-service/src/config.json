@@ -1,0 +1,34 @@
+{
+  "booking": {
+    "categories": [ 
+                    "booking request", 
+                    "booking amendment", 
+                    "booking cancellation", 
+                    "other"
+                ],
+    "rules": [
+                "If the email does not fit any category, set type to 'Other'.",
+                "If the email is about a new booking request, set type to 'Booking Request'.",
+                "If the email is about an amendment, set type to 'Booking Amendment'.",
+                "If the email is about a cancellation, set type to 'Booking Cancellation'."
+            ]
+  },
+  "equipment": {
+    "categories": [
+                    "equipment release request",
+                    "special equipment request",
+                    "equipment substitution request",
+                    "empty container pickup request",
+                    "equipment interchange request",
+                    "other"
+                ],
+    "rules": [
+                "If the email does not fit any category, set type to 'Other'.",
+                "If the email is about releasing a specific equipment, set type to 'Equipment Release Request'.",
+                "If the email is about oversized or hazardous goods, set type to 'Special Equipment Request'.",
+                "If the email is about changing equipment size, set type to 'Equipment Substitution Request'.",
+                "If the email is about requesting empty container pickup, set type to 'Empty Container Pickup Request'.",
+                "If the email is about change of depot/location, set type to 'Equipment Interchange Request'."
+            ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+            "subject": "Request for Equipment Release – Booking No. MAA1234567",
+            "to": ["equipment@maersk.com"],
+            "cc": [
+                "depot.operations@chennaicontainers.com",
+                "logistics@abcexports.in"
+            ],
+            "booking_details": {
+                "booking_number": "MAA1234567",
+                "container_type_size": "40’ High Cube Dry",
+                "quantity_required": 12,
+                "pickup_location": "Chennai Container Yard – Red Hills Depot",
+                "planned_pickup_date": "2025-08-25",
+                "shipper_name": "ABC Exports Pvt. Ltd.",
+                "destination": "Port of Rotterdam (Netherlands)"
+            },
+            "contact_details": {
+                "name": "Rajesh Kumar",
+                "designation": "Export Manager",
+                "company": "ABC Exports Pvt. Ltd.",
+                "phone": "+91-9876543210",
+                "email": "rajesh.kumar@abcexports.in"
+            }
+        }

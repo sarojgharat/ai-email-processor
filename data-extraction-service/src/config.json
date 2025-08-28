@@ -1,0 +1,14 @@
+{
+  "booking": {
+    "booking request": "output_formats\\booking\\output_format_booking_request.json",
+    "booking amendment": "output_formats\\booking\\output_format_booking_amendment.json",
+    "booking cancellation": "output_formats\\booking\\output_format_booking_cancellation.json"
+  },
+  "equipment": {
+    "equipment release request": "output_formats\\equipment\\output_format_equipment_release_request.json",
+    "special equipment request": "output_formats\\equipment\\output_format_special_equipment_request.json",
+    "equipment substitution request": "equipment\\output_formats\\output_format_equipment_substitution_request.json",
+    "empty container pickup request": "equipment\\output_formats\\output_format_empty_container_pickup_request.json",
+    "equipment interchange request": "equipment\\output_formats\\output_format_equipment_interchange_request.json"
+  }
+}
