@@ -9,7 +9,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Create MCP Server
-mcp = FastMCP()
+mcp = FastMCP(port=8000, host="localhost")
 
 ##### Tools #####
 
@@ -29,4 +29,4 @@ def classify_text (process: str, input_text: str) -> dict:
 
 if __name__ == "__main__":
     # Initialize and run the server
-    mcp.run(transport="sse")
+    mcp.run(transport="sse", )

@@ -9,7 +9,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Create MCP Server
-mcp = FastMCP()
+mcp = FastMCP(port=8001, host="localhost")
 
 ##### Tools #####
 
