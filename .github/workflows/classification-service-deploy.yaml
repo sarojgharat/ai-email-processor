@@ -27,13 +27,14 @@ jobs:
     - name: Configure Docker to use gcloud as credential helper
       run: |
         gcloud auth configure-docker us-central1-docker.pkg.dev
+        gcloud auth login
 
     - name: Build and push Docker image
       uses: docker/build-push-action@v5
       with:
         context: classification-service
         push: true
-        tags: us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/email-automation-repo/classification-api:latest
+        tags: us-central1-docker.pkg.dev/${{secrets.GCP_PROJECT_ID}}/email-automation-repo/classification-api:latest
 
     - name: Deploy to Cloud Run
       uses: google-github-actions/deploy-cloudrun@v1
