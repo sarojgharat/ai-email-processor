@@ -34,4 +34,4 @@ uv run python -m src.mcp.classifier_mcp_server  --host localhost --port 8002
 This launches the agent server at `http://localhost:8001/classify`
 
 
-python start_services.py --host localhost --port1 8001 --port2 8002
+python start_services.py --host localhost --port1 9001 --port2 9002
