@@ -6,18 +6,18 @@ An agent that classifies text into predefined categories.
 
 1.  **Clone the repository** (if applicable):
     ```bash
-    cd classification-service
+    cd email-processor-service
     ```
 
 2.  **Install the required packages**:
     It's recommended to use a virtual environment to manage dependencies.
 
     ```bash
-    cd classification-service
+    cd email-processor-service
     uv init --python python
     uv venv
     .venv\Scripts\activate
-    uv add mcp[cli] mcp langchain langchain-google-genai fastapi uvicorn
+    uv add mcp[cli] mcp langchain langchain-google-genai fastapi uvicorn langchain-community
     uv sync --all-groups
     ```
 

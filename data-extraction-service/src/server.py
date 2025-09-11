@@ -1,7 +1,7 @@
 import click
 import logging
 from mcp.server.fastmcp import FastMCP
-from .classifier import TextClassifier
+from .extractor import DataExtractor
 
 logging.basicConfig(
     level=logging.DEBUG,
@@ -18,16 +18,17 @@ def run_server(host, port):
     mcp = FastMCP(port=port, host=host)
 
     @mcp.tool()
-    def classify_text(process: str, input_text: str) -> dict:
-        """Classify the input_text based on process"""
-        logger.info(f"Inside================={process} {input_text}")
-        text_classifier = TextClassifier()
-        result = text_classifier.classify_text(process, input_text)
+    def extract_data (process: str, category : str, input_text: str) -> dict:
+        """Classify the input_text based on process and category"""
+    
+        logger.info(f"Inside================={process} {input_text} {category}")
+        data_extractor = DataExtractor()
+        result = data_extractor.extract_text (process, category, input_text)
         return {
-            "process": process,
-            "text": input_text,
-            "classification_type": result["classification_type"],
-            "confidence_score": result["confidence_score"]
+            "process" : process,
+            "category" : category,
+            "text" : input_text,
+            "extracted_data": result
         }
 
     mcp.run(transport="streamable-http", mount_path="/mcp")

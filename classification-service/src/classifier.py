@@ -24,7 +24,7 @@ class TextClassifier:
         self.config_service = ConfigService("src\\config.json")
 
         # Initialize Gemini model
-        self.model = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0, logprobs = True)
+        self.model = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0)
 
     def classify_text(self, process: str, text: str) -> dict:
         logger.info (f"Process============{process}") 
@@ -33,7 +33,7 @@ class TextClassifier:
     
         prompt = PromptTemplate (
             input_variables = ["categories", "text"],
-            template = "Classify the following text into one of these types: '{categories}'\n\nInput Text: '{text}'"
+            template = "Classify the following text into only one of these types: '{categories}'\n\nInput Text: '{text}'"
         )
         
         chain = prompt | self.model

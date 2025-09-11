@@ -23,9 +23,12 @@ An agent that extract data in Json format from an unstructured text.
 
 ### Basic Usage
 
-To run the agent with the default host (`localhost`) and port (`8888`), simply execute the Python script:
-
+To run the text data extraction api with the default host (`localhost`) and port (`8003`), simply execute the Python script:
 ```bash
-uv run python -m main
+uvicorn src.main:app --host localhost --port 8003
 
-This launches the agent server at `http://localhost:8888`
+To expose the extration method as a tool on the MCP Server, run the below Python script.
+```bash
+uv run python -m src.server  --host localhost --port 8004
+
+This launches the agent server at `http://localhost:8003/extract`

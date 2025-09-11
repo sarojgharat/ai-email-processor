@@ -13,8 +13,8 @@ async def run():
             print(tools)
 
              # Call a tool
-            result = await session.call_tool("classify_text", arguments=
-                                             {"process": "booking", "input_text": "This request is for new booking"})
+            result = await session.call_tool("extract_data", arguments=
+                                             {"process": "booking", "category" : "booking amendment" ,"input_text": "This request is for new booking"})
             print(result)
 
 

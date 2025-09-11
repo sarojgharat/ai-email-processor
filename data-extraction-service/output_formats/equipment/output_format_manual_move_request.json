@@ -1,0 +1,15 @@
+{
+    "request_type": "manual move request",
+    "equipment_id": "MSCU1234567",
+    "current_location": "Depot A",
+    "new_location": "Depot B",
+    "reason_for_move": "Operational requirement",
+    "requested_by": "John Doe",
+    "contact": {
+        "name": "string",
+        "position": "string",
+        "company": "string",
+        "email": "string",
+        "phone": "string"
+    }
+}

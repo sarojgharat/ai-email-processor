@@ -20,6 +20,7 @@
                     "equipment substitution request",
                     "empty container pickup request",
                     "equipment interchange request",
+                    "manual move request",
                     "other"
                 ],
     "rules": [
@@ -28,7 +29,8 @@
                 "If the email is about oversized or hazardous goods, set type to 'Special Equipment Request'.",
                 "If the email is about changing equipment size, set type to 'Equipment Substitution Request'.",
                 "If the email is about requesting empty container pickup, set type to 'Empty Container Pickup Request'.",
-                "If the email is about change of depot/location, set type to 'Equipment Interchange Request'."
+                "If the email is about change of depot/location, set type to 'Equipment Interchange Request'.",
+                "If the email is about moving equipment within the same depot, set type to 'Manual Move Request'."
             ]
   }
 }

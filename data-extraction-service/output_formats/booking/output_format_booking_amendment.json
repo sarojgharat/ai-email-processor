@@ -1,61 +1,29 @@
- {
-            "bookingRequest": {
-                "bookingId": "BR123456",
-                "bookingDate": "2025-08-01",
-                "shipper": {
-                    "name": "ABC Exports Pvt. Ltd.",
-                    "address": "123 Industrial Estate, Mumbai, India",
-                    "contactNumber": "+91 22 1234 5678",
-                    "email": "logistics@abcexports.com"
-                },
-                "consignee": {
-                    "name": "Global Imports LLC",
-                    "address": "200 Harbor Drive, Los Angeles, CA, USA",
-                    "contactNumber": "+1 310 555 8899",
-                    "email": "imports@globalimports.com"
-                },
-                "ports": {
-                    "portOfLoading": {
-                        "name": "Nhava Sheva",
-                        "unCode": "INNSA"
-                    },
-                    "portOfDischarge": {
-                        "name": "Los Angeles",
-                        "unCode": "USLAX"
-                    },
-                    "finalDestination": "Los Angeles, USA"
-                },
-                "vessel": {
-                    "name": "CMA CGM Titan",
-                    "voyageNumber": "0TV1E",
-                    "etd": "2025-08-25",
-                    "eta": "2025-09-15"
-                },
-                "cargoDetails": {
-                    "commodityDescription": "Finished Textiles",
-                    "hsCode": "630790",
-                    "grossWeightKg": 20000,
-                    "volumeCbm": 28,
-                    "dangerousGoods": false
-                },
-                "equipment": [
-                    {
-                        "type": "40HC",
-                        "quantity": 1
-                    }
-                ],
-                "temperatureControl": null,
-                "specialInstructions": [
-                    "Container to be made available for stuffing at shipper’s factory by 2025-08-20",
-                    "Notify party same as consignee"
-                ],
-                "freightTerms": {
-                    "paymentTerm": "Freight Prepaid",
-                    "incoterm": "FOB Nhava Sheva (INNSA)"
-                },
-                "attachments": [
-                    "Packing List",
-                    "Commercial Invoice"
-                ]
-            }
-        }        
+{
+  "booking_reference": "string",
+  "vessel": {
+    "name": "string",
+    "voyage": "string"
+  },
+  "original_schedule": {
+    "etd_pol": "YYYY-MM-DD",
+    "eta_pod": "YYYY-MM-DD"
+  },
+  "amendments": [
+    {
+      "field": "string",               
+      "description": "string",         
+      "previous_value": "any",         
+      "new_value": "any",             
+      "effective_date": "YYYY-MM-DD"  
+    }
+  ],
+  "unchanged_fields": ["string"],      
+  "request_notes": "string",          
+  "contact": {
+    "name": "string",
+    "position": "string",
+    "company": "string",
+    "email": "string",
+    "phone": "string"
+  }
+}

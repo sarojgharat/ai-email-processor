@@ -1,0 +1,189 @@
+openapi: 3.0.3
+info:
+  title: Shipping Manual Moves API
+  description: API for managing manual equipment moves in a shipping and logistics domain.
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:8007
+    description: Local development server
+
+paths:
+  /moves/manual:
+    post:
+      summary: Create a new manual equipment move
+      description: Registers a new manual move for a piece of equipment, specifying its origin, destination, and the user performing the action.
+      operationId: createManualMove
+      requestBody:
+        description: The details for the new manual move.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ManualMoveCreate'
+      responses:
+        '201':
+          description: Manual move successfully created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ManualMove'
+        '400':
+          description: Invalid request body.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /moves/manual/{move_id}:
+    get:
+      summary: Retrieve a specific manual move
+      description: Retrieves the details of a single manual move using its unique identifier.
+      operationId: getManualMove
+      parameters:
+        - name: move_id
+          in: path
+          description: The unique ID of the manual move.
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Manual move found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ManualMove'
+        '404':
+          description: Manual move not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    put:
+      summary: Update a manual move
+      description: Updates an existing manual move. Allows for changing its destination or other details.
+      operationId: updateManualMove
+      parameters:
+        - name: move_id
+          in: path
+          description: The unique ID of the manual move to update.
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        description: The updated details for the manual move.
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ManualMoveCreate'
+      responses:
+        '200':
+          description: Manual move successfully updated.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ManualMove'
+        '404':
+          description: Manual move not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+    delete:
+      summary: Delete a manual move
+      description: Deletes a manual move record from the system.
+      operationId: deleteManualMove
+      parameters:
+        - name: move_id
+          in: path
+          description: The unique ID of the manual move to delete.
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '204':
+          description: Manual move successfully deleted.
+        '404':
+          description: Manual move not found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    ManualMove:
+      type: object
+      required:
+        - move_id
+        - equipment_id
+        - from_location
+        - to_location
+        - moved_by
+        - timestamp
+      properties:
+        move_id:
+          type: string
+          description: A unique identifier for the manual move.
+          format: uuid
+          example: "a1b2c3d4-e5f6-7890-1234-567890abcdef"
+        equipment_id:
+          type: string
+          description: The unique ID of the piece of equipment being moved.
+          example: "EQP-4567"
+        from_location:
+          type: string
+          description: The starting location of the equipment.
+          example: "Warehouse A"
+        to_location:
+          type: string
+          description: The destination location of the equipment.
+          example: "Warehouse B"
+        moved_by:
+          type: string
+          description: The user or system that performed the move.
+          example: "John Doe"
+        timestamp:
+          type: string
+          description: The date and time the move was recorded.
+          format: date-time
+
+    ManualMoveCreate:
+      type: object
+      required:
+        - equipment_id
+        - from_location
+        - to_location
+        - moved_by
+      properties:
+        equipment_id:
+          type: string
+          description: The unique ID of the piece of equipment being moved.
+          example: "EQP-4567"
+        from_location:
+          type: string
+          description: The starting location of the equipment.
+          example: "Warehouse A"
+        to_location:
+          type: string
+          description: The destination location of the equipment.
+          example: "Warehouse B"
+        moved_by:
+          type: string
+          description: The user or system that performed the move.
+          example: "John Doe"
+
+    ErrorResponse:
+      type: object
+      properties:
+        detail:
+          type: string
+          description: A human-readable description of the error.
+          example: "Manual move with ID a1b2c3d4-e5f6-7890-1234-567890abcdef not found."
