@@ -19,7 +19,7 @@ jobs:
       uses: google-github-actions/auth@v1
       with:
         workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
-        service_account_email: ${{ secrets.GCP_SERVICE_ACCOUNT_EMAIL }}
+        service_account: ${{ secrets.GCP_SERVICE_ACCOUNT_EMAIL }}
 
     - name: Set up Docker
       uses: docker/setup-buildx-action@v2
