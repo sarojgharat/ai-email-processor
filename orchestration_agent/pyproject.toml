@@ -1,0 +1,26 @@
+[project]
+name = "orchestration-agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "a2a-sdk>=0.3.1",
+    "click>=8.2.1",
+    "colorama>=0.4.6",
+    "google-adk>=1.11.0",
+    "google-api-python-client>=2.179.0",
+    "google-auth-httplib2>=0.2.0",
+    "google-auth-oauthlib>=1.2.2",
+    "google-cloud-aiplatform>=1.110.0",
+    "google-genai>=1.31.0",
+    "httpx>=0.28.1",
+    "langchain>=0.3.27",
+    "langchain-google-genai>=2.1.9",
+    "langgraph>=0.6.5",
+    "litellm>=1.75.8",
+    "python-dotenv>=1.1.1",
+    "rich>=14.1.0",
+    "uvicorn>=0.35.0",
+    "yfinance>=0.2.65",
+]
