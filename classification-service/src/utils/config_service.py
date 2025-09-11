@@ -32,7 +32,7 @@ class ConfigService:
 
 
 if __name__ == "__main__":
-    service = ConfigService("src\\config.json")
+    service = ConfigService("src\\utils\\config.json")
 
     # Example usage
     print(service.get_values("booking", "categories"))  

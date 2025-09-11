@@ -2,7 +2,7 @@ import os
 import getpass
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.prompts import PromptTemplate
-from .config_service import ConfigService
+from src.utils.config_service import ConfigService
 import logging
 from dotenv import load_dotenv
 import os
@@ -21,7 +21,7 @@ class TextClassifier:
 
     def __init__(self):
 
-        self.config_service = ConfigService("src\\config.json")
+        self.config_service = ConfigService("src\\utils\\config.json")
 
         # Initialize Gemini model
         self.model = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0)

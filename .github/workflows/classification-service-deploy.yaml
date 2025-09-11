@@ -27,13 +27,13 @@ jobs:
     - name: Build and push Docker image
       uses: docker/build-push-action@v5
       with:
-        context: .
+        context: classification-service
         push: true
-        tags: us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/my-repo/my-api:latest
+        tags: us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/email-automation-repo/classification-api:latest
 
     - name: Deploy to Cloud Run
       uses: google-github-actions/deploy-cloudrun@v1
       with:
         service: ${{ secrets.GCP_SERVICE_NAME }}
-        image: us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/my-repo/my-api:latest
+        image: us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/email-automation-repo/classification-api:latest
         region: ${{ secrets.GCP_REGION }}

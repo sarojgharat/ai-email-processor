@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from .classifier import TextClassifier  # Adjust import path as needed
+from src.classifier import TextClassifier  # Adjust import path as needed
 
 app = FastAPI()
 classifier = TextClassifier()

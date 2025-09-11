@@ -25,10 +25,13 @@ An agent that classifies text into predefined categories.
 
 To run the text classification api with the default host (`localhost`) and port (`8001`), simply execute the Python script:
 ```bash
-uvicorn src.main:app --host localhost --port 8001
+uvicorn src.api.classifier_api:app --host localhost --port 8001
 
 To expose the classification method as a tool on the MCP Server, run the below Python script.
 ```bash
-uv run python -m src.server  --host localhost --port 8002
+uv run python -m src.mcp.classifier_mcp_server  --host localhost --port 8002
 
 This launches the agent server at `http://localhost:8001/classify`
+
+
+python start_services.py --host localhost --port1 8001 --port2 8002

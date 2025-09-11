@@ -1,7 +1,7 @@
 import click
 import logging
 from mcp.server.fastmcp import FastMCP
-from .classifier import TextClassifier
+from src.classifier import TextClassifier
 
 logging.basicConfig(
     level=logging.DEBUG,
