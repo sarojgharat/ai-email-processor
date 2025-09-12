@@ -17,7 +17,7 @@ An agent that classifies text into predefined categories.
     uv init --python python
     uv venv
     .venv\Scripts\activate
-    uv add mcp[cli] mcp langchain langchain-google-genai fastapi uvicorn
+    uv add mcp[cli] mcp langchain langchain-google-genai fastapi uvicorn click
     uv sync --all-groups
     ```
 
